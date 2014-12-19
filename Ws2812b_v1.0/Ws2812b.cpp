@@ -19,24 +19,24 @@ Ws2812b::Ws2812b(uint8_t pin, short numOfLeds){
   // Set output pin
 
   if(this->port == SEL_PORTC){
-
-    pinMode(BASE_PORTC + this->pin, OUTPUT);
-
-    digitalWrite(BASE_PORTC + this->pin, LOW);
+    
+    DDRC |= (1 << this->pin);
+    
+    PORTC &= ~(1 << this->pin);
 
   }
   else if(this->port == SEL_PORTB){
-  
-    pinMode(BASE_PORTB + this->pin, OUTPUT);
-
-    digitalWrite(BASE_PORTB + this->pin, LOW);
+    
+    DDRB |= (1 << this->pin);
+    
+    PORTB &= ~(1 << this->pin);
     
   }
   else{
-
-    pinMode(pin, OUTPUT);
-
-    digitalWrite(pin, LOW);
+    
+    DDRD |= (1 << this->pin);
+    
+    PORTD &= ~(1 << this->pin);
 
   }
 

@@ -5,8 +5,6 @@
 
 // Defines
 
-#define BASE_PORTB 8
-#define BASE_PORTC 14
 #define SEL_PORTB 0
 #define SEL_PORTC 1
 #define SEL_PORTD 2
