@@ -1,4 +1,4 @@
 Arduino
 =======
 
-My Arduino libraries
+Collection of my Arduino libraries
