@@ -22,8 +22,8 @@ private:
 
 public:
   Ws2812b(uint8_t pin, short numOfLeds);
-  bool setColor(uint8_t r, uint8_t g, uint8_t b); // Set one color for whole led strip
-  bool setColorAt(short pos, uint8_t r, uint8_t g, uint8_t b); // Set color for particular led in the strip
+  void setColor(uint8_t r, uint8_t g, uint8_t b); // Set one color for whole led strip
+  void setColorAt(short pos, uint8_t r, uint8_t g, uint8_t b); // Set color for particular led in the strip
   void refresh(void);
   void clearStrip(void);
   void setBrightness(uint8_t brightness);

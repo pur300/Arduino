@@ -51,64 +51,50 @@ Ws2812b::Ws2812b(uint8_t pin, short numOfLeds){
 }
 
 
-bool Ws2812b::setColor(uint8_t r, uint8_t g, uint8_t b){
+void Ws2812b::setColor(uint8_t r, uint8_t g, uint8_t b){
 
   short i;
 
-  // Check if rgb is in range
+  // Set color
 
-  if(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 and b <= 255){
-
-    // Set color
-
-    for(i = 3; i <= this->numOfLeds * 3; i+=3){
-
-      // Set blue
-
-      this->ledStrip[i - 1] = b * this->brightness;
-
-      // Set red
-
-      this->ledStrip[i - 2] = r * this->brightness;
-
-      // Set green
-
-      this->ledStrip[i - 3] = g * this->brightness;
-
-
-    }
-
-    return true;
-
-  }
-
-  return false;
-
-}
-
-bool Ws2812b::setColorAt(short pos, uint8_t r, uint8_t g, uint8_t b){
-
-  // Check if position is in range
-
-  if(pos >= 0 && pos <= this->numOfLeds){
+  for(i = 3; i <= this->numOfLeds * 3; i+=3){
 
     // Set blue
 
-    this->ledStrip[pos * 3 - 1] = b * this->brightness;
+    this->ledStrip[i - 1] = b * this->brightness;
 
     // Set red
 
-    this->ledStrip[pos * 3 - 2] = r * this->brightness;
+    this->ledStrip[i - 2] = r * this->brightness;
 
     // Set green
 
-    this->ledStrip[pos * 3 - 3] = g * this->brightness;
+    this->ledStrip[i - 3] = g * this->brightness;
 
-    return true;
 
   }
 
-  return false;
+}
+
+void Ws2812b::setColorAt(short pos, uint8_t r, uint8_t g, uint8_t b){
+
+  // Check if position is in range
+
+  if(pos >= 0 && pos < this->numOfLeds){
+
+    // Set blue
+
+    this->ledStrip[(pos + 1) * 3 - 1] = b * this->brightness;
+
+    // Set red
+
+    this->ledStrip[(pos + 1) * 3 - 2] = r * this->brightness;
+
+    // Set green
+
+    this->ledStrip[(pos + 1) * 3 - 3] = g * this->brightness;
+
+  }
 
 }
 
