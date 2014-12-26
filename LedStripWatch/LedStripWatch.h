@@ -1,6 +1,8 @@
 #ifndef LEDSTRIPWATCH_H
 #define LEDSTRIPWATCH_H
 
+#include <Ws2812b.h>
+
 // Defines
 
 #define NUMOFLEDS 60
