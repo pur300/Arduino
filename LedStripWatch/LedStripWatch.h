@@ -1,8 +1,6 @@
 #ifndef LEDSTRIPWATCH_H
 #define LEDSTRIPWATCH_H
 
-#include <Ws2812b.h>
-
 // Defines
 
 #define NUMOFLEDS 60
@@ -35,7 +33,7 @@ class LedStripWatch : public Ws2812b{
     
     public:
         LedStripWatch(uint8_t pin);
-        bool setClock(uint8_t hour, uint8_t minutes, uint8_t seconds);
+        void setClock(uint8_t hour, uint8_t minutes, uint8_t seconds);
         void incrementClock(void);
         void setHourColor(uint8_t r, uint8_t g, uint8_t b);
         void setMinutesColor(uint8_t r, uint8_t g, uint8_t b);

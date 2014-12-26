@@ -32,7 +32,7 @@ LedStripWatch::LedStripWatch(uint8_t pin):Ws2812b(pin, NUMOFLEDS){
 
 }
 
-bool LedStripWatch::setClock(uint8_t hour, uint8_t minutes, uint8_t seconds){
+void LedStripWatch::setClock(uint8_t hour, uint8_t minutes, uint8_t seconds){
 
     // check if all is within proper range
     
@@ -51,12 +51,9 @@ bool LedStripWatch::setClock(uint8_t hour, uint8_t minutes, uint8_t seconds){
         // Refresh strip and return true
         
         this->refresh();
-        
-        return true;
 
     }
     
-    return false;
 }
 
 void LedStripWatch::incrementClock(void){
