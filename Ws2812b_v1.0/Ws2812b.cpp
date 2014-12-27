@@ -350,14 +350,9 @@ void Ws2812b::clearStrip(void){
 
 void Ws2812b::setBrightness(uint8_t brightness){
 
-  // Brightness ranges between 0 and 255
-  
-  if(brightness >= 0 && brightness <= 255){
   
     // Brightness between 0 and 1
     
     this->brightness = brightness/255.0;
-    
-  }
   
 }
