@@ -359,12 +359,5 @@ void Ws2812b::setBrightness(uint8_t brightness){
     this->brightness = brightness/255.0;
     
   }
-  else{
-  
-    // Set default brightness to 1 if entered brightness was out of range
-    
-    this->brightness = 1;
-    
-  }
   
 }
