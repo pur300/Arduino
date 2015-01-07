@@ -149,7 +149,7 @@ void loop(){
       
       // Send ok response
       
-      bluetooth.write("+0:");
+      bluetooth.print("+0:");
       
     }
     else if(type == COLORS){
@@ -174,7 +174,7 @@ void loop(){
       
       // Send ok response
       
-      bluetooth.write("+0:");
+      bluetooth.print("+0:");
       
     }
     else if(type == BRIGHTNESS){
@@ -189,7 +189,7 @@ void loop(){
       
       // Send ok response
       
-      bluetooth.write("+0:");
+      bluetooth.print("+0:");
           
     }
     else if(type == NIGHTMODE){
@@ -204,7 +204,7 @@ void loop(){
       
       // Send ok response
       
-      bluetooth.write("+0:");
+      bluetooth.print("+0:");
       
     }
     else if(type == TERMIN){
@@ -223,7 +223,7 @@ void loop(){
       
       // Send ok response
       
-      bluetooth.write("+0:");
+      bluetooth.print("+0:");
       
     }
     else if(type == INFO){
@@ -232,7 +232,7 @@ void loop(){
     
       // Send data to the mobile phone
       
-      bluetooth.write("+6:");
+      bluetooth.print("+6:");
       
       // Send time
       
