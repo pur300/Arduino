@@ -1,0 +1,1 @@
+Clock uses a mirror, a one way foil and LEDs to create an infinity mirror effect. Mobile phone is used to set proper time and to adjust colors for hours and minutes. Mobile phone is interconnected with the clock via bluetooth.
