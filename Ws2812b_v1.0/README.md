@@ -1,4 +1,4 @@
-Ws2812b library is used to control a Ws2812b 5050 led strip which has multiple addressable LEDs. Library provides an option to select which pin will be used for controlling the led strip. It is possible to select all pins from ports B, C and D.
+Ws2812b library is used to control a Ws2812b 5050 led strip which has multiple addressable LEDs. Library provides an option to select which pin will be used to control the led strip. It is possible to select all pins from ports B, C and D.
 Library also provides an ability to control multiple led strips via various pins and ports.
 
 Version 1.0 includes:
