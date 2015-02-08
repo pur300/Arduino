@@ -10,11 +10,11 @@ Ws2812b::Ws2812b(uint8_t pin, short numOfLeds){
 
   // Set port
 
-  this->port = this->getPort(pin);
+  this->port = Ws2812b::getPort(pin);
 
   // Set proper pin
 
-  this->pin = this->get07Pin(pin);
+  this->pin = Ws2812b::get07Pin(pin);
 
   // Set output pin
 
@@ -349,7 +349,6 @@ void Ws2812b::clearStrip(void){
 }
 
 void Ws2812b::setBrightness(uint8_t brightness){
-
   
     // Brightness between 0 and 1
     

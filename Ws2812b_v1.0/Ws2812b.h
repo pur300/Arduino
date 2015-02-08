@@ -17,8 +17,8 @@ private:
   uint8_t pin;
   float brightness;
   volatile uint8_t * ledStrip;
-  uint8_t get07Pin(uint8_t pin);
-  uint8_t getPort(uint8_t pin);
+  static uint8_t get07Pin(uint8_t pin);
+  static uint8_t getPort(uint8_t pin);
 
 public:
   Ws2812b(uint8_t pin, short numOfLeds);
