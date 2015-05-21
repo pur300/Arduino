@@ -255,21 +255,21 @@ double Weather::readHumidity(void){
     
     lastCall = micros();
 	
-	// Check checksum
+    // Check checksum
 	
-	if(crc == humidity + temperature >> 8){
+    if(crc == humidity + temperature >> 8){
 		
-		// Check if decimal part is not zero
+        // Check if decimal part is not zero
 		
-		if(humidity & 0xFF != 0){
+            if(humidity & 0xFF != 0){
 			
-			return (humidity >> 8) + (humidity & 0xFF) / pow(10, (int)log10(humidity & 0xFF) + 1);
+                return (humidity >> 8) + (humidity & 0xFF) / pow(10, (int)log10(humidity & 0xFF) + 1);
 			
-		}
+            }
 		
-		return humidity >> 8;
+	    return humidity >> 8;
 		
-	}
+     }
     
   }
   
