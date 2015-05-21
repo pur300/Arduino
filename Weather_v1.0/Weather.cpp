@@ -232,22 +232,12 @@ double Weather::readHumidity(void){
       while(readPin() != 0){};
       
       stopTime = micros();
-      
-      if(i >= 0 && i <= 15){
         
-        (stopTime - startTime > 40) ? humidity |= (1 << 15 - i) : humidity &= ~(1 << 15 - i);
+      (i >= 0 && i <= 15 && stopTime - startTime > 40) ? humidity |= (1 << 15 - i) : humidity &= ~(1 << 15 - i);
       
-      }
-      else if(i >= 16 && i <= 31){
-      
-        (stopTime - startTime > 40) ? temperature |= (1 << 31 - i) : temperature &= ~(1 << 31 - i);
-        
-      }
-      else{
-    
-        (stopTime - startTime > 40) ? crc |= (1 << 39 - i) : crc &= ~(1 << 39 - i);
-        
-      }
+	  (i >= 16 && i <= 31 && stopTime - startTime > 40) ? temperature |= (1 << 31 - i) : temperature &= ~(1 << 31 - i);
+
+      (i >= 32 && i < DATA_BIT_COUNT && stopTime - startTime > 40) ? crc |= (1 << 39 - i) : crc &= ~(1 << 39 - i);
 
     }
     
@@ -255,21 +245,21 @@ double Weather::readHumidity(void){
     
     lastCall = micros();
 	
-    // Check checksum
+	// Check checksum
 	
-    if(crc == humidity + temperature >> 8){
+	if(crc == humidity + temperature >> 8){
 		
-        // Check if decimal part is not zero
+		// Check if decimal part is not zero
 		
-            if(humidity & 0xFF != 0){
+		if(humidity & 0xFF != 0){
 			
-                return (humidity >> 8) + (humidity & 0xFF) / pow(10, (int)log10(humidity & 0xFF) + 1);
+			return (humidity >> 8) + (humidity & 0xFF) / pow(10, (int)log10(humidity & 0xFF) + 1);
 			
-            }
+		}
 		
-	    return humidity >> 8;
+		return humidity >> 8;
 		
-     }
+	}
     
   }
   
