@@ -1,4 +1,4 @@
-This code is used to control light and a water pump via web page, which is generated when a user sends a http request to an ip, which belongs to Arduino(you should send a request on port 80). The code provides two modes for light and the water pump:
+This code is used to control light and a water pump via web page, which is generated when a user sends a HTTP request to an Arduino web server(you should send the request on port 80). The code provides two modes for light and the water pump:
 * Automatic mode
 * Manual mode
 
